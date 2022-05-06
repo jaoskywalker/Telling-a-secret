@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+
+/*--------GENERAL --------*/
+
+:root {
+  --color-primary: #7749F8;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+html, body {
+    background-color: #fff;
+}
+
+a, a:hover{
+  color: #fff;
+  text-decoration:none;
+
+}
+
+
+/*----- NAV/HEADER------- */
+
+header{
+  background-color:var(--color-primary);
+  
+}
+
+header nav{
+  background-color: var(--color-primary);
+  font-size: larger;
+  max-width: 1300px;;
+  margin: auto;
+}
+header nav a i {
+  font-size: xx-large;
+}
+
+/* MAIN  */
+
+main{
+  margin-top: 20px;
+}
+
+/* INPUT FORM */
+.form-container{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 700px;
+    margin: auto;
+    background-color:#ECECEC;
+    padding: 5px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px 1px lightgrey;
+  }
+
+.form-container textarea{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px;
+    border-radius: 4px;
+}
+button{
+  background-color: #7749F8;
+  color: white;
+}
