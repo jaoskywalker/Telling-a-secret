@@ -52,7 +52,7 @@ main{
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    max-width: 700px;
+    max-width: 1000px;
     margin: auto;
     background-color:#ECECEC;
     padding: 5px;
@@ -69,6 +69,32 @@ main{
     border-radius: 4px;
 }
 button{
-  background-color: #7749F8;
+  background-color:var(--color-primary);
   color: white;
+}
+
+/* BADGE DIV*/
+
+.selection-posts{
+  max-width:1000px;
+  margin: auto;
+  margin-top: 30px;
+  padding-left: 10px;
+}
+
+.badge{
+  background-color:var(--color-primary);
+}
+
+
+/* POSTS FORM DIV*/
+button .badge{
+  background-color:red;
+}
+.card-btn{
+  margin-right: 10px;
+}
+
+.card-div{
+  margin-bottom: 10px;
 }
