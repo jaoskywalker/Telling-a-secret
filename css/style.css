@@ -8,93 +8,77 @@
 }
 
 * {
-    box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
 }
 
-html, body {
-    background-color: #fff;
+html,
+body {
+  background-color: #fff;
 }
 
-a, a:hover{
+a,
+a:hover {
   color: #fff;
-  text-decoration:none;
+  text-decoration: none;
 
 }
 
-
-/*----- NAV/HEADER------- */
-
-header{
-  background-color:var(--color-primary);
-  
-}
-
-header nav{
-  background-color: var(--color-primary);
-  font-size: larger;
-  max-width: 1300px;;
-  margin: auto;
-}
-header nav a i {
-  font-size: xx-large;
-}
-
-/* MAIN  */
-
-main{
+main {
   margin-top: 20px;
 }
 
 /* INPUT FORM */
-.form-container{
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    max-width: 1000px;
-    margin: auto;
-    background-color:#ECECEC;
-    padding: 5px;
-    border-radius: 4px;
-    box-shadow: 2px 2px 2px 1px lightgrey;
-  }
-
-.form-container textarea{
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 5px;
-    border-radius: 4px;
+.form-container {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 700px;
+  margin: auto;
+  background-color: #ECECEC;
+  padding: 5px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px 1px lightgrey;
 }
-button{
-  background-color:var(--color-primary);
+
+.form-container textarea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+button {
+  background-color: var(--color-primary);
   color: white;
 }
 
 /* BADGE DIV*/
 
-.selection-posts{
-  max-width:1000px;
+.selection-posts {
+  max-width: 700px;
   margin: auto;
   margin-top: 30px;
   padding-left: 10px;
 }
 
-.badge{
-  background-color:var(--color-primary);
+.badge {
+  background-color: var(--color-primary);
 }
 
 
 /* POSTS FORM DIV*/
-button .badge{
-  background-color:red;
+button .badge {
+  background-color: red;
 }
-.card-btn{
+
+.card-btn {
   margin-right: 10px;
 }
 
-.card-div{
+.card-div {
   margin-bottom: 10px;
 }

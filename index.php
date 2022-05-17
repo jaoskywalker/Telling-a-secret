@@ -1,3 +1,9 @@
+<?php
+$url = "http://localhost:8080/posts/titlesearch";
+$json = file_get_contents($url);
+$json_data = json_decode($json, true);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,38 +23,37 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
-            <a class="navbar-brand" href="#">
-                <i class="bi bi-incognito"></i>
-                <span class="mb-0 h1">Telling a Secret</span>
-            </a>
-        </nav>
-    </header>
+
+    <!-- HEADER LINK-->
+    <?php
+    include 'templates/header/header.php';
+    ?>
     <main>
 
         <!-- INPUT FORM ----------------------------------------------------------------------------------------->
         <section class="container">
             <div class="form-container">
                 <div class="form-group">
-                    <textarea class="form-control" rows="3" cols="40" placeholder="Write your secret here"></textarea>
-                    <hr>
-                    <div class="row">
-                        <div class="col-4">
-                            <select class="form-control">
-                                <option value="" disabled selected>Select your region</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                        </div>
-                        <div class="col-8 text-right">
-                            <button type="button" class="btn">Tell us</button>
-                        </div>
-                    </div>
+                    <form action="scripts/SaveNewPost.php" method="POST">
+                        <textarea class="form-control" rows="3" cols="40" placeholder="Write your secret here" name="body"></textarea>
+                        <hr>
+                        <div class="row">
+                            <div class="col-4">
+                                <select class="form-control">
+                                    <option value="" disabled selected>Region</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="col-8 text-right">
+                                <button type="submit" class="btn">Tell us</button>
+                            </div>
+                    </form>
                 </div>
+            </div>
         </section>
         <!-- BADGE DIV --------------------------------------------------------------------------------------------->
         <section class="selection-posts">
@@ -57,89 +62,39 @@
         <!-- POSTS DIV --------------------------------------------------------------------------------------------->
         <section class="container">
             <div class="row">
-                <div class="col-sm-6 card-div">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <div class="row">
-                            <button type="button" class="btn card-btn">
-                                <i class="bi bi-hand-thumbs-up"></i>
-                                Likes <span class="badge badge-dark">9</span>
-                                <span class="sr-only">people liked</span>
-                            </button>
-                            <button type="button" class="btn">
-                                <i class="bi bi-chat-dots"></i>
-                                Comment <span class="badge badge-dark">9</span>
-                                <span class="sr-only">people comments</span>
-                            </button>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                           <div class="row">
-                            <button type="button" class="btn card-btn">
-                                <i class="bi bi-hand-thumbs-up"></i>
-                                Likes <span class="badge badge-dark">9</span>
-                                <span class="sr-only">people liked</span>
-                            </button>
-                            <button type="button" class="btn">
-                                <i class="bi bi-chat-dots"></i>
-                                Comment <span class="badge badge-dark">9</span>
-                                <span class="sr-only">people comments</span>
-                            </button>
-                        </div>
+
+                <?php foreach ($json_data as &$users) {
+
+                    echo "<div class='col-sm-6 card-div'>
+                    <div class='card'>
+                        <div class='card-body'>
+                        
+                            <h5 class='card-title'>" . $users['title'] .  "</h5>
+                            <p class='card-text'>" . $users['body'] . "</p>
+                            <div class='row'>
+                                <button type='button' class='btn card-btn'>
+                                    <i class='bi bi-hand-thumbs-up'></i>
+                                    Likes <span class='badge badge-dark'>9</span>
+                                    <span class='sr-only'>people liked</span>
+                                </button>
+                                <button type='button' class='btn'>
+                                    <i class='bi bi-chat-dots'></i>
+                                    Comment <span class='badge badge-dark'>9</span>
+                                    <span class='sr-only'>people comments</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                           <div class="row">
-                            <button type="button" class="btn card-btn">
-                                <i class="bi bi-hand-thumbs-up"></i>
-                                Likes <span class="badge badge-dark">9</span>
-                                <span class="sr-only">people liked</span>
-                            </button>
-                            <button type="button" class="btn">
-                                <i class="bi bi-chat-dots"></i>
-                                Comment <span class="badge badge-dark">9</span>
-                                <span class="sr-only">people comments</span>
-                            </button>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                           <div class="row">
-                            <button type="button" class="btn card-btn">
-                                <i class="bi bi-hand-thumbs-up"></i>
-                                Likes <span class="badge badge-dark">9</span>
-                                <span class="sr-only">people liked</span>
-                            </button>
-                            <button type="button" class="btn">
-                                <i class="bi bi-chat-dots"></i>
-                                Comment <span class="badge badge-dark">9</span>
-                                <span class="sr-only">people comments</span>
-                            </button>
-                        </div>
-                        </div>
-                    </div>
-                </div>
+            ";
+                } ?>
             </div>
         </section>
     </main>
+    <!-- FOOTER LINK -->
+    <?php
+    include 'templates/footer/footer.php';
+    ?>
 </body>
 
 </html>

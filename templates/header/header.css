@@ -1,0 +1,19 @@
+@media (max-width: 500px) {
+ .logout{
+   display:none;
+ }
+}
+
+header{
+  background-color:var(--color-primary);
+}
+
+header nav{
+  background-color: var(--color-primary);
+  font-size: larger;
+  max-width: 1300px;;
+  margin: auto;
+}
+header nav a i {
+  font-size: xx-large;
+}

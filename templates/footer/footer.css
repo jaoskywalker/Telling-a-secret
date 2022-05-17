@@ -1,0 +1,15 @@
+
+footer{
+    background-color:var(--color-primary);
+  }
+  
+  footer nav{
+    background-color: var(--color-primary);
+    font-size: larger;
+    max-width: 1300px;;
+    margin: auto;
+  }
+  footer nav a i {
+    font-size: xx-large;
+  }
+  
